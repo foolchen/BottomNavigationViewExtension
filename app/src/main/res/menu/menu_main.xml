@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/app_menu_news"
+      android:icon="@mipmap/ic_launcher"
+      android:title="@string/text_news"
+      />
+  <item
+      android:id="@+id/app_menu_trends"
+      android:icon="@mipmap/ic_launcher"
+      android:title="@string/text_trends"
+      />
+  <item
+      android:id="@+id/app_menu_message"
+      android:icon="@mipmap/ic_launcher"
+      android:title="@string/text_message"
+      />
+  <item
+      android:id="@+id/app_menu_profile"
+      android:icon="@mipmap/ic_launcher"
+      android:title="@string/text_profile"
+      />
+
+</menu>

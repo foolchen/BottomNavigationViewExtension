@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">BottomNavigationViewExtension</string>
+  <string name="text_news">新闻</string>
+  <string name="text_trends">动态</string>
+  <string name="text_message">消息</string>
+  <string name="text_profile">我</string>
 </resources>
