@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
 
     app_bottom_nav.apply {
       //      disableIconTint()
-//      disableShiftMode()
-//      unifyItems()
+      //      disableShiftMode()
+      //      unifyItems()
       disableAll()
     }
   }

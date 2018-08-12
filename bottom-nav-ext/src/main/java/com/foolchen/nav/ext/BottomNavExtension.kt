@@ -33,6 +33,10 @@ fun BottomNavigationView.disableShiftMode(forceUpdate: Boolean = true) {
     // BottomNavigationMenuView未提供setter方法来控制位移动画的开关，在不修改源码的前提下，只能通过反射来实现
     val shiftingMode = bottomNavigationMenuView.javaClass.getDeclaredField("mShiftingMode")
     shiftingMode.setBooleanValue(bottomNavigationMenuView, false)
+    val childCount = bottomNavigationMenuView.childCount
+    for (i in 0 until childCount) {
+      (bottomNavigationMenuView.getChildAt(i) as BottomNavigationItemView).setShiftingMode(false)
+    }
     if (forceUpdate) {
       // 此处刷新整个BottomNavigationMenuView,防止已经显示的效果残留影响到整体效果
       // 如果不刷新的话,会导致进入时选中的Icon存在多余的顶部外边距(mShiftAmount),第一次点击时还存在位移动画
@@ -54,10 +58,6 @@ fun BottomNavigationView.unifyItems(forceUpdate: Boolean = true) {
     for (i in 0 until childCount) {
       val child = bottomNavigationMenuView.getChildAt(i) as BottomNavigationItemView
       val clazz = child.javaClass
-
-      // 禁用位移动画
-      val shiftingMode = clazz.getDeclaredField("mShiftingMode")
-      shiftingMode.setBooleanValue(child, false)
 
       // 使选中/未选中条目的顶部边距不发生变化
       val shiftAmountField = clazz.getDeclaredField("mShiftAmount")
